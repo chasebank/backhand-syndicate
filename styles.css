@@ -1,1 +1,1 @@
-body{background-color:red}
+:root{font-size:15px}@media (min-width:550px){:root{font-size:calc(10.28571px + .85714vw)}}@media (min-width:1600px){:root{font-size:24px}}h1{font-size:4rem;color:#ff00ff}body{background-color:#0ff}
