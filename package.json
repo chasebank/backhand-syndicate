@@ -11,7 +11,7 @@
   ],
   "version": "1.0.0",
   "scripts": {
-    "build": "eleventy",
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'eleventy-gh-demo'",
     "start": "eleventy --serve"
   },
   "dependencies": {
