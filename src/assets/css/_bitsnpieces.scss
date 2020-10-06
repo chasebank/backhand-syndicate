@@ -1,0 +1,22 @@
+$smallScreen: 550px;
+$largeScreen: 1600px;
+$mainPadding: 3rem;
+
+@function between($to, $from, $toWidth, $fromWidth) {
+  $slope: ($to - $from) / ($toWidth - $fromWidth);
+  $base: $from - $slope * $fromWidth;
+
+  @return calc(#{$base} + #{100vw * $slope});
+}
+
+@mixin between($property, $to, $from, $toWidth: $smallScreen, $fromWidth: $largeScreen) {
+  #{$property}: $to;
+
+  @media (min-width: $toWidth) {
+    #{$property}: between($to, $from, $smallScreen, $largeScreen);
+  }
+
+  @media (min-width: $fromWidth) {
+    #{$property}: $from;
+  }
+}

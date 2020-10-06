@@ -1,0 +1,8 @@
+:root {
+  @include between(font-size, 15px, 24px);
+}
+
+h1 {
+  font-size: 4rem;
+  color: magenta;
+}
