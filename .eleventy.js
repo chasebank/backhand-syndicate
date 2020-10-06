@@ -17,10 +17,10 @@ module.exports = function(eleventyConfig) {
 //     htmlTemplateEngine: 'njk'
 //   }
  
-  return {
-    dir: {
-      input: "src",
-      output: "dist"
-    }
-  };
+  // return {
+  //   dir: {
+  //     input: "src",
+  //     output: "dist"
+  //   }
+  // };
 };
