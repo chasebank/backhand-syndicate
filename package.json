@@ -1,0 +1,22 @@
+{
+  "name": "eleventy-on-glitch",
+  "description": "A starter template for 11ty (eleventy) static site generator on glitch.com",
+  "tags": [
+    "eleventy",
+    "11ty",
+    "ssr",
+    "static",
+    "glitch",
+    "template"
+  ],
+  "version": "1.0.0",
+  "scripts": {
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'backhand-syndicate'",
+    "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "eleventy-plugin-sass": "^1.1.1"
+  },
+  "license": "MIT"
+}
