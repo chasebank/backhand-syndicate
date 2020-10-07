@@ -37,6 +37,8 @@ body {
 header {
   display: grid;
   place-items: center;
+  z-index: 1;
+  // align-self: start;
 }
 
 #backhand-logo {
@@ -223,8 +225,9 @@ section {
   }
   
   main {
-    padding: 5vw;
+    padding: 2vw 5vw;
     grid-template-columns: 100%;
+    place-items: start center;
   }
 
   section {

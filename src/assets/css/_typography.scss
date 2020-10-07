@@ -10,6 +10,7 @@ body {
   font-family: 'Mukta Vaani', sans-serif;
   color: white;
   text-shadow:
+    1px 1px 4px black,
     1px -1px 1px black;
 }
 
@@ -31,13 +32,13 @@ h1 {
   letter-spacing: -.25rem;
   line-height: .85;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 2rem;
 }
 
 p {
-  // @include responsive-property(font-size, 14px, 14px);
-  // margin-top: 0;
   line-height: 1.5;
+  z-index: 1;
+  filter: drop-shadow(0 2px 4px black);
 
   + p {
     margin-top: 0;
