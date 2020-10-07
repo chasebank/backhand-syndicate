@@ -3,19 +3,75 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {# <meta property="og:title" content="Backhand Syndicate">
+    <meta property="og:description" content="An Eve Echoes Corporation">
+    <meta property="og:image" content="assets/images/social/thumbnail.jpg">
+    <meta property="og:url" content="http://www.backhand.space">
+    <meta name="twitter:title" content="Backhand Syndicate">
+    <meta name="twitter:description" content="An Eve Echoes Corporation">
+    <meta name="twitter:image" content="assets/images/social/thumbnail.jpg">
+    <meta name="twitter:card" content="summary_large_image"> #}
+
+    <!-- Theme Color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#3c64ff">
+
+    <!-- Short description of the document (limit to 150 characters) -->
+    <!-- This content *may* be used as a part of search engine results. -->
+    <meta name="description" content="An Eve Echoes Corporation">
+
+    <meta property="og:url" content="http://www.backhand.space">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Backhand Syndicate">
+    <meta property="og:image" content="http://www.backhand.space/assets/images/social/bh--thumbnail.jpg">
+    <meta property="og:image:alt" content="Backhand Syndicate Logo">
+    <meta property="og:description" content="An Eve Echoes Corporation">
+    <meta property="og:site_name" content="Backhand Syndicate Logo">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://www.backhand.space">
+    <meta name="twitter:title" content="Backhand Syndicate">
+    <meta name="twitter:description" content="An Eve Echoes Corporation">
+    <meta name="twitter:image" content="http://www.backhand.space/assets/images/social/bh--thumbnail.jpg">
+    <meta name="twitter:image:alt" content="Backhand Syndicate Logo. Please visit our website.">
+
+    <!--  Essential META Tags -->
+    <meta property="og:title" content="Backhand Syndicate">
+    <meta property="og:description" content="An Eve Echoes Corporation">
+    <meta property="og:image" content="http://www.backhand.space/assets/images/social/bh--thumbnail.jpg">
+    <meta property="og:url" content="http://www.backhand.space">
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:site_name" content="Backhand Syndicate">
+    <meta name="twitter:image:alt" content="Visit our website">
+    
     <title>{{ pageTitle or siteData.name }}</title>
     <link rel="stylesheet" href="{{ 'styles.css' | url }}" />
   </head>
   <body>
-    <div id="fx">
-      <img id="fx--wave-particles" src="https://media.giphy.com/media/ozf1LXwmGbxdQ9UlWW/giphy.gif" />
-      <img id="fx--aurora" src="assets/images/bh-aurora.gif" />
-      {# <img id="fx--electricity" src="assets/images/bh--electricity.gif" /> #}
-    </div>
+    <svg id="main-bg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" preserveAspectRatio="xMinYMin slice" aria-hidden="true" focusable="false">
+      <defs>
+        <mask id="fx-mask">
+          <image width="1920" height="1080" xlink:href="assets/images/bh--svg-mask.png"/>
+        </mask>
+
+        <filter id="filter--turbulence" filterUnits="objectBoundingBox" x="0" y="0" width="100%" height="100%">
+          <feTurbulence id="turbulence" type="fractalNoise" numOctaves="4" seed="20"></feTurbulence>
+          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="5" in="SourceGraphic"></feDisplacementMap>
+        </filter>
+      </defs>
+      <image width="1920" height="1080" xlink:href="assets/images/bh--bg.jpg"/>
+      <g class="svg-fx" mask="url(#fx-mask)">
+        <image x="42%" y="15%" height="60%" id="aurora" xlink:href="assets/images/bh--aurora.gif"/>
+    <!--     <rect width="100%" height="100%" fill="lime" /> -->
+      </g>
+      <image id="fx--engine-exhaust" x="1154" y="532" xlink:href="assets/images/bh--engine-exhaust.jpg" />
+    </svg>
 
     <main>
       <header>
-        <svg id="backhand-logo" version="1.1" id="Layer_6_copy" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 640 640">
+        <svg id="backhand-logo" version="1.1" id="Layer_6_copy" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 640 640" aria-hidden="true" focusable="false">
           <path class="st0" d="M320 180C149 180 46 331 46 331s107 149 274 149 274-150 274-150-102-150-274-150zm0 253c-129 0-211-103-211-103s79-103 211-103c133 0 211 103 211 103s-82 103-211 103z"/>
           <path class="st0" d="M320 236c-52 0-94 42-94 94s42 95 94 95 94-43 94-95-42-94-94-94zm0 149c-30 0-54-24-54-55s24-55 54-55 55 25 55 55-25 55-55 55z"/>
           <g>
@@ -29,5 +85,10 @@
 
       {{ content | safe }}
     </main>
+
+    <canvas id="canvas" aria-hidden="true" focusable="false"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

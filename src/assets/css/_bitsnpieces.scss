@@ -1,6 +1,8 @@
 $smallScreen: 550px;
+$mediumScreen: 1000px; 
 $largeScreen: 1600px;
 $mainPadding: 3rem;
+$discordLinkGlowColor: rgb(60,100,255);
 
 @function between($to, $from, $toWidth, $fromWidth) {
   $slope: ($to - $from) / ($toWidth - $fromWidth);
