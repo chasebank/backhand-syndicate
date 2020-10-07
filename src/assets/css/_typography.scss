@@ -1,8 +1,37 @@
+@import 'https://fonts.googleapis.com/css2?family=MuseoModerno:wght@900&amp;display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@300&display=swap';
+
 :root {
-  @include between(font-size, 15px, 24px);
+  @include responsive-property(font-size, 15px, 20px);
+}
+
+body {
+  font-family: 'Mukta Vaani', sans-serif;
+  color: white;
+  text-shadow:
+    1px -1px 1px black;
+}
+
+h1,
+h2 {
+  font-family: 'MuseoModerno', sans-serif;
+  text-align: center;
+  text-shadow:
+    1px -1px 1px black,
+    1px -1px 10px #01579B;
 }
 
 h1 {
-  font-size: 4rem;
-  color: magenta;
+  // background-color: red;
+  font-size: 5rem;
+  letter-spacing: -.25rem;
+  line-height: .85;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p {
+  // @include responsive-property(font-size, 14px, 14px);
+  line-height: 1.5;
 }
