@@ -14,7 +14,8 @@
     "node": ">=0.12"
   },
   "scripts": {
-    "build": "env NODE_ENV=production npx eleventy --pathprefix 'backhand-syndicate'",
+    "set-domain": "echo \"www.backhand.space\" > _site/CNAME",
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'backhand-syndicate' && npm run set-domain",
     "start": "eleventy --serve"
   },
   "dependencies": {
