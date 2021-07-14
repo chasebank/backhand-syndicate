@@ -29,6 +29,8 @@ const canvas = document.getElementById(`canvas`),
       ctxWidth = canvas.scrollWidth * scale,
       ctxHeight = canvas.scrollHeight * scale;
 
+      console.log(canvas.scrollHeight)
+
 canvas.width = ctxWidth;
 canvas.height = ctxHeight;
 
